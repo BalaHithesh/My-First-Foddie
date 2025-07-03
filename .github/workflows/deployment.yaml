@@ -7,11 +7,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4.2.2
       - name: docker image build
-        run:  docker build -t ${{vars.DOCKER_USERNAME}}/My-First-Foddie .
+        run:  docker build -t ${{vars.DOCKER_USERNAME}}/my-first-foddie .
       - name: Docker Login
         uses: docker/login-action@v3.4.0
         with:
           username:  ${{vars.DOCKER_USERNAME}}
           password:  ${{secrets.DOCKER_PASSWORD}}
       - name: push image to docker hub
-        run: docker push ${{vars.DOCKER_USERNAME}}/My-first-Foddie
+        run: docker push ${{vars.DOCKER_USERNAME}}/my-first-foddie
